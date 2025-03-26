@@ -98,4 +98,12 @@ FString UMyBlueprintFunctionJudgment::RemoveSlashPrefix(const FString& Input)
 }
 
 
-
+FString UMyBlueprintFunctionJudgment::GetWinMessage(const FString& RawInput)
+{
+	FString PlayerName, _;
+	if (RawInput.Split(TEXT(":"), &PlayerName, &_))
+	{
+		return PlayerName + TEXT(" win");
+	}
+	return TEXT("win");
+}

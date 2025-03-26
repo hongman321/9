@@ -41,6 +41,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Judgment")
 	static FString RemoveSlashPrefix(const FString& Input);
 
-
+	UFUNCTION(BlueprintCallable, Category = "Judgment")
+	static FString GetWinMessage(const FString& RawInput);
 
 };
