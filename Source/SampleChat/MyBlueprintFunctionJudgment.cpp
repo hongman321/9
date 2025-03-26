@@ -43,8 +43,22 @@ FString UMyBlueprintFunctionJudgment::GetResultString(int32 Strikes, int32 Balls
 
 bool UMyBlueprintFunctionJudgment::CheckNumber(const FString& PlayerGuess)
 {
-	return PlayerGuess.Len() == 3;
+	if (PlayerGuess.Len() != 3)
+	{
+		return false;
+	}
+
+	for (int32 i = 0; i < 3; i++)
+	{
+		if (!FChar::IsDigit(PlayerGuess[i]))
+		{
+			return false;
+		}
+	}
+
+	return true; // 3글자이고 모두 숫자
 }
+
 
 FString UMyBlueprintFunctionJudgment::GenerateUniqueThreeDigitNumber()
 {
